@@ -1,10 +1,3 @@
-const examples = {
-  cards: 'Oi, preciso de 200 cartões de visita pra sexta. Vocês fazem?',
-  flyers: 'Bom dia! Gostaria de orçamento para 500 panfletos A5, frente e verso, papel couchê 115 g. A arte está pronta. Preciso até 25/11.',
-  banner: 'Boa tarde! Preciso de 1 banner de 80 x 120 cm pra hoje às 16h. Quanto fica?',
-  mixed: 'Oi! Preciso de 1.000 panfletos A5 e 200 cartões de visita, tudo pra sexta. Já tenho a arte dos panfletos.'
-};
-
 const message = document.getElementById('message');
 const draft = document.getElementById('draft');
 const inputStatus = document.getElementById('input-status');
@@ -87,7 +80,7 @@ function updateReply() {
 
 document.querySelectorAll('[data-example]').forEach((button) => {
   button.addEventListener('click', () => {
-    message.value = examples[button.dataset.example];
+    message.value = button.value;
     resetResult();
     message.focus();
   });

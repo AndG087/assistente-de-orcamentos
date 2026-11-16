@@ -37,6 +37,8 @@ Para rodar os testes, use Node.js 22 ou superior:
 node --test
 ```
 
+Ao publicar mudanças nos scripts ou estilos, atualize a versão `?v=` dos arquivos em `index.html` para que o navegador carregue os recursos da nova publicação.
+
 ## Avaliação e piloto
 
 Os [15 pedidos fictícios de referência](tests/casos-de-pedido.json) incluem vários produtos, abreviações, correções e campos ambíguos. Cada pedido tem uma ficha esperada. Campos omitidos no arquivo representam informações a confirmar. Para comparar com um modelo de IA, use os mesmos pedidos e conte acertos, omissões e informações sem suporte na mensagem. Registre o modelo e a data do teste junto aos resultados.

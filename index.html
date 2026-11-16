@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <title>Assistente de orçamentos para gráficas</title>
-  <link rel="stylesheet" href="assets/styles.css">
-  <script src="js/orcamento.js" defer></script>
-  <script src="js/app.js" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=3">
+  <script src="js/orcamento.js?v=3" defer></script>
+  <script src="js/app.js?v=3" defer></script>
 </head>
 <body>
   <main>
@@ -23,10 +23,14 @@
         <form id="order-form">
           <textarea id="message" maxlength="3500" aria-describedby="input-hint" placeholder="Oi, preciso de 200 cartões de visita pra sexta. Vocês fazem?" required></textarea>
           <div class="examples" aria-label="Pedidos de exemplo">
-            <button type="button" class="chip" data-example="cards">Cartões de visita</button>
-            <button type="button" class="chip" data-example="flyers">Panfletos</button>
-            <button type="button" class="chip" data-example="banner">Banner urgente</button>
-            <button type="button" class="chip" data-example="mixed">Pedido com dois produtos</button>
+            <button type="button" class="chip" data-example="cards"
+              value="Oi, preciso de 200 cartões de visita pra sexta. Vocês fazem?">Cartões de visita</button>
+            <button type="button" class="chip" data-example="flyers"
+              value="Bom dia! Gostaria de orçamento para 500 panfletos A5, frente e verso, papel couchê 115 g. A arte está pronta. Preciso até 25/11.">Panfletos</button>
+            <button type="button" class="chip" data-example="banner"
+              value="Boa tarde! Preciso de 1 banner de 80 x 120 cm pra hoje às 16h. Quanto fica?">Banner urgente</button>
+            <button type="button" class="chip" data-example="mixed"
+              value="Oi! Preciso de 1.000 panfletos A5 e 200 cartões de visita, tudo pra sexta. Já tenho a arte dos panfletos.">Pedido com dois produtos</button>
           </div>
           <div class="buttons">
             <button class="primary" type="submit">Montar ficha</button>
