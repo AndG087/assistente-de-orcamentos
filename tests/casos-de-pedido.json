@@ -1,0 +1,89 @@
+[
+  {
+    "nome": "cartões com informações faltando",
+    "mensagem": "Oi, preciso de 200 cartões de visita pra sexta. Vocês fazem?",
+    "itens": [{"product":"Cartões de visita","quantity":"200","deadline":"pra sexta"}]
+  },
+  {
+    "nome": "panfletos com milhar e especificações",
+    "mensagem": "Preciso de 1.500 panfletos A5, frente e verso, até 25/11. A arte está pronta.",
+    "itens": [{"product":"Panfletos","quantity":"1.500","size":"A5","printing":"frente e verso","artwork":"Pronta","deadline":"até 25/11"}]
+  },
+  {
+    "nome": "banner urgente com horário",
+    "mensagem": "Preciso de 1 banner de 80 x 120 cm pra hoje às 16h. Quanto fica?",
+    "itens": [{"product":"Banner","quantity":"1","size":"80 x 120 cm","deadline":"pra hoje às 16h"}]
+  },
+  {
+    "nome": "dois produtos com prazo comum e arte de um só",
+    "mensagem": "Preciso de 1.000 panfletos A5 e 200 cartões de visita, tudo pra sexta. Já tenho a arte dos panfletos.",
+    "itens": [
+      {"product":"Panfletos","quantity":"1.000","size":"A5","artwork":"Pronta","deadline":"pra sexta"},
+      {"product":"Cartões de visita","quantity":"200","deadline":"pra sexta"}
+    ]
+  },
+  {
+    "nome": "prazo específico por produto",
+    "mensagem": "Preciso de 500 panfletos A5 para quinta e 1 banner de 80 x 120 cm para sexta às 14:30.",
+    "itens": [
+      {"product":"Panfletos","quantity":"500","size":"A5","deadline":"para quinta"},
+      {"product":"Banner","quantity":"1","size":"80 x 120 cm","deadline":"para sexta às 14:30"}
+    ]
+  },
+  {
+    "nome": "correção de quantidade sem repetir o produto",
+    "mensagem": "Quero 500 panfletos A5. Na verdade, podem ser 1.000? Só na frente. A arte está pronta.",
+    "itens": [{"product":"Panfletos","quantity":"1.000","size":"A5","printing":"Só na frente","artwork":"Pronta"}]
+  },
+  {
+    "nome": "correção de quantidade com produto repetido",
+    "mensagem": "Quero 500 panfletos A5. Na verdade, podem ser 1.000 panfletos?",
+    "itens": [{"product":"Panfletos","quantity":"1.000","size":"A5"}]
+  },
+  {
+    "nome": "quantidade em aberto entre duas opções",
+    "mensagem": "Quero 1 banner e 100 ou 200 panfletos, tudo para sexta às 14h.",
+    "itens": [
+      {"product":"Banner","quantity":"1","deadline":"para sexta às 14h"},
+      {"product":"Panfletos","deadline":"para sexta às 14h"}
+    ]
+  },
+  {
+    "nome": "quantidade depois do produto e medidas decimais",
+    "mensagem": "Preciso de banners, 2 unidades de 0,8 m x 1,2 m. Para amanhã às 14:30.",
+    "itens": [{"product":"Banner","quantity":"2","size":"0,8 m x 1,2 m","deadline":"Para amanhã às 14:30"}]
+  },
+  {
+    "nome": "dimensões compactas sem confundir com impressão",
+    "mensagem": "Preciso de 1 banner de 1x4 m.",
+    "itens": [{"product":"Banner","quantity":"1","size":"1x4 m"}]
+  },
+  {
+    "nome": "nomes alternativos e números por extenso",
+    "mensagem": "Preciso de dois flyers e um banner para amanhã.",
+    "itens": [
+      {"product":"Panfletos","quantity":"dois"},
+      {"product":"Banner","quantity":"um","deadline":"para amanhã"}
+    ]
+  },
+  {
+    "nome": "pedido sem produto identificado",
+    "mensagem": "Vamos conversar sobre impressão?",
+    "itens": [{}]
+  },
+  {
+    "nome": "arte ainda por fazer",
+    "mensagem": "Preciso de 250 cartões de visita 4x4, 9 x 5 cm. Ainda não tenho a arte.",
+    "itens": [{"product":"Cartões de visita","quantity":"250","size":"9 x 5 cm","printing":"4x4","artwork":"A preparar"}]
+  },
+  {
+    "nome": "pedido com abreviação e data completa",
+    "mensagem": "São 2 mil un. de folhetos A6, apenas na frente, até 07/12/2026 às 9h30.",
+    "itens": [{"product":"Panfletos","quantity":"2 mil","size":"A6","printing":"apenas na frente","deadline":"até 07/12/2026 às 9h30"}]
+  },
+  {
+    "nome": "dimensão corrigida não vira quantidade",
+    "mensagem": "Preciso de 2 banners. Na verdade, 80 x 120 cm. A arte está pronta.",
+    "itens": [{"product":"Banner","quantity":"2","size":"80 x 120 cm","artwork":"Pronta"}]
+  }
+]

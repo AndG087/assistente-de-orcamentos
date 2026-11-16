@@ -1,7 +1,8 @@
 const examples = {
   cards: 'Oi, preciso de 200 cartões de visita pra sexta. Vocês fazem?',
   flyers: 'Bom dia! Gostaria de orçamento para 500 panfletos A5, frente e verso, papel couchê 115 g. A arte está pronta. Preciso até 25/11.',
-  banner: 'Boa tarde! Preciso de 1 banner de 80 x 120 cm pra hoje. Quanto fica?'
+  banner: 'Boa tarde! Preciso de 1 banner de 80 x 120 cm pra hoje às 16h. Quanto fica?',
+  mixed: 'Oi! Preciso de 1.000 panfletos A5 e 200 cartões de visita, tudo pra sexta. Já tenho a arte dos panfletos.'
 };
 
 const message = document.getElementById('message');
@@ -10,6 +11,9 @@ const inputStatus = document.getElementById('input-status');
 const outputStatus = document.getElementById('output-status');
 const result = document.getElementById('result');
 const empty = document.getElementById('empty');
+const orderItems = document.getElementById('order-items');
+const itemTemplate = document.getElementById('item-template');
+const copyDraft = document.getElementById('copy-draft');
 
 async function copy(text, status) {
   try {
@@ -42,6 +46,45 @@ function resetResult() {
   empty.hidden = false;
 }
 
+function labelItems() {
+  const items = Array.from(orderItems.children);
+  items.forEach((item, index) => {
+    item.querySelector('legend').textContent = `Item ${index + 1}`;
+    const remove = item.querySelector('.remove-item');
+    remove.hidden = items.length === 1;
+    remove.setAttribute('aria-label', `Remover item ${index + 1}`);
+  });
+}
+
+function addItem(values) {
+  const item = itemTemplate.content.firstElementChild.cloneNode(true);
+  for (const input of item.querySelectorAll('input')) {
+    input.value = values[input.name] || '';
+  }
+  orderItems.append(item);
+  return item;
+}
+
+function markReplyOutdated() {
+  copyDraft.disabled = true;
+  outputStatus.textContent = 'A ficha mudou. Atualize a resposta para copiar a nova versão.';
+}
+
+function updateReply() {
+  const items = Array.from(orderItems.children, (item) => Object.fromEntries(
+    Array.from(item.querySelectorAll('input'), (input) => [input.name, input.value.trim()])
+  ));
+  const { questions, reply } = prepareReply(items);
+  const visibleQuestions = questions.length ? questions : ['Nenhuma pergunta adicional sugerida.'];
+  document.getElementById('questions').replaceChildren(...visibleQuestions.map((question) => {
+    const item = document.createElement('li');
+    item.textContent = question;
+    return item;
+  }));
+  draft.value = reply;
+  copyDraft.disabled = false;
+}
+
 document.querySelectorAll('[data-example]').forEach((button) => {
   button.addEventListener('click', () => {
     message.value = examples[button.dataset.example];
@@ -60,17 +103,10 @@ document.getElementById('order-form').addEventListener('submit', (event) => {
     return;
   }
 
-  const analysis = analyzeOrder(order);
-  for (const field of ['product', 'quantity', 'deadline']) {
-    document.getElementById(field).textContent = analysis[field];
-  }
-  const questions = analysis.questions.length ? analysis.questions : ['Nenhuma pergunta adicional sugerida.'];
-  document.getElementById('questions').replaceChildren(...questions.map((question) => {
-    const item = document.createElement('li');
-    item.textContent = question;
-    return item;
-  }));
-  draft.value = analysis.reply;
+  orderItems.replaceChildren();
+  analyzeOrder(order).forEach(addItem);
+  labelItems();
+  updateReply();
   inputStatus.textContent = '';
   outputStatus.textContent = '';
   empty.hidden = true;
@@ -78,10 +114,33 @@ document.getElementById('order-form').addEventListener('submit', (event) => {
   document.getElementById('output-title').focus();
 });
 
+orderItems.addEventListener('input', markReplyOutdated);
+orderItems.addEventListener('click', (event) => {
+  if (!event.target.matches('.remove-item')) return;
+  const item = event.target.closest('.order-item');
+  const neighbor = item.nextElementSibling || item.previousElementSibling;
+  item.remove();
+  labelItems();
+  markReplyOutdated();
+  neighbor.querySelector('input').focus();
+});
+
+document.getElementById('add-item').addEventListener('click', () => {
+  const item = addItem({});
+  labelItems();
+  markReplyOutdated();
+  item.querySelector('input').focus();
+});
+
+document.getElementById('update-reply').addEventListener('click', () => {
+  updateReply();
+  outputStatus.textContent = 'Resposta atualizada.';
+});
+
 document.getElementById('copy-prompt').addEventListener('click', () => {
   copy(makePrompt(message.value.trim() || '[Cole aqui a mensagem do cliente]'), inputStatus);
 });
-document.getElementById('copy-draft').addEventListener('click', () => {
+copyDraft.addEventListener('click', () => {
   if (!draft.value.trim()) {
     outputStatus.textContent = 'Escreva uma resposta antes de copiar.';
     draft.focus();

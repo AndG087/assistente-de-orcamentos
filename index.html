@@ -26,9 +26,10 @@
             <button type="button" class="chip" data-example="cards">Cartões de visita</button>
             <button type="button" class="chip" data-example="flyers">Panfletos</button>
             <button type="button" class="chip" data-example="banner">Banner urgente</button>
+            <button type="button" class="chip" data-example="mixed">Pedido com dois produtos</button>
           </div>
           <div class="buttons">
-            <button class="primary" type="submit">Preparar resposta</button>
+            <button class="primary" type="submit">Montar ficha</button>
             <button class="secondary" type="button" id="copy-prompt">Copiar prompt para IA</button>
           </div>
           <p class="status" id="input-status" role="status"></p>
@@ -36,17 +37,18 @@
       </section>
 
       <section class="card" aria-labelledby="output-title">
-        <h2 id="output-title" tabindex="-1">Resumo e resposta</h2>
+        <h2 id="output-title" tabindex="-1">Ficha do pedido</h2>
         <div class="empty" id="empty">
           <h3>O resultado aparece aqui</h3>
-          <p>Escolha um exemplo e clique em “Preparar resposta”.</p>
+          <p>Escolha um exemplo e clique em “Montar ficha”.</p>
         </div>
         <div id="result" hidden>
-          <dl class="details">
-            <div><dt>Produto</dt><dd id="product"></dd></div>
-            <div><dt>Quantidade</dt><dd id="quantity"></dd></div>
-            <div><dt>Prazo</dt><dd id="deadline"></dd></div>
-          </dl>
+          <p class="hint">Confira os dados de cada item. Você pode editar os campos e atualizar a resposta.</p>
+          <div id="order-items"></div>
+          <div class="buttons item-actions">
+            <button type="button" class="secondary" id="add-item">Adicionar item</button>
+            <button type="button" class="primary" id="update-reply">Atualizar resposta</button>
+          </div>
           <h3>O que falta confirmar</h3>
           <ul id="questions"></ul>
           <label class="draft-heading" for="draft">Rascunho para WhatsApp</label>
@@ -58,6 +60,20 @@
         </div>
       </section>
     </div>
+    <template id="item-template">
+      <fieldset class="order-item">
+        <legend></legend>
+        <div class="item-fields">
+          <label>Produto<input name="product" placeholder="A confirmar"></label>
+          <label>Quantidade<input name="quantity" placeholder="A confirmar"></label>
+          <label>Tamanho<input name="size" placeholder="A confirmar"></label>
+          <label>Impressão<input name="printing" placeholder="A confirmar"></label>
+          <label>Arte<input name="artwork" placeholder="A confirmar"></label>
+          <label>Prazo<input name="deadline" placeholder="A confirmar"></label>
+        </div>
+        <button type="button" class="remove-item">Remover item</button>
+      </fieldset>
+    </template>
     <p class="footer-note">A prévia usa regras locais para cartões de visita, panfletos e banners. Para experimentar com um modelo de IA, copie o prompt e cole no chat de sua preferência.</p>
   </main>
 
