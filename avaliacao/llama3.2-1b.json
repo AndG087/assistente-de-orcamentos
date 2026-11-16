@@ -1,0 +1,2060 @@
+{
+  "data": "2026-11-16T17:59:35.382Z",
+  "modelo": "llama3.2:1b",
+  "opcoes": {
+    "temperature": 0,
+    "seed": 42,
+    "num_predict": 600
+  },
+  "grupos": {
+    "regressao": {
+      "regras": {
+        "fichas": 15,
+        "fichasExatas": 15,
+        "corretos": 68,
+        "vaziosCorretos": 46,
+        "omitidos": 0,
+        "incorretos": 0,
+        "semApoio": 0,
+        "itensFaltantes": 0,
+        "itensExtras": 0,
+        "respostasInvalidas": 0
+      },
+      "ia": {
+        "fichas": 15,
+        "fichasExatas": 0,
+        "corretos": 32,
+        "vaziosCorretos": 9,
+        "omitidos": 6,
+        "incorretos": 30,
+        "semApoio": 36,
+        "itensFaltantes": 2,
+        "itensExtras": 1,
+        "respostasInvalidas": 0
+      },
+      "casos": [
+        {
+          "nome": "cartões com informações faltando",
+          "regras": {
+            "itens": [
+              {
+                "product": "Cartões de visita",
+                "quantity": "200",
+                "size": "",
+                "printing": "",
+                "artwork": "",
+                "deadline": "pra sexta"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 3,
+              "vaziosCorretos": 3,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Cartões de visita",
+                "quantity": ",",
+                "size": "",
+                "printing": "",
+                "artwork": "",
+                "deadline": ""
+              }
+            ],
+            "tempoMs": 19680,
+            "pontuacao": {
+              "corretos": 1,
+              "vaziosCorretos": 3,
+              "omitidos": 1,
+              "incorretos": 1,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "200",
+                  "obtido": ","
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "omitidos",
+                  "esperado": "pra sexta",
+                  "obtido": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "panfletos com milhar e especificações",
+          "regras": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": "1.500",
+                "size": "A5",
+                "printing": "frente e verso",
+                "artwork": "Pronta",
+                "deadline": "até 25/11"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 6,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Panfletos A5",
+                "quantity": ":25",
+                "size": "A5",
+                "printing": "frente e verso",
+                "artwork": "A pronto",
+                "deadline": "25/11"
+              }
+            ],
+            "tempoMs": 495,
+            "pontuacao": {
+              "corretos": 3,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 3,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Panfletos",
+                  "obtido": "Panfletos A5"
+                },
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "1.500",
+                  "obtido": ":25"
+                },
+                {
+                  "item": 1,
+                  "campo": "artwork",
+                  "tipo": "incorretos",
+                  "esperado": "Pronta",
+                  "obtido": "A pronto"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "banner urgente com horário",
+          "regras": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": "1",
+                "size": "80 x 120 cm",
+                "printing": "",
+                "artwork": "",
+                "deadline": "pra hoje às 16h"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 4,
+              "vaziosCorretos": 2,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": "1",
+                "size": "80x120cm",
+                "printing": "frente e verso",
+                "artwork": "Preparar",
+                "deadline": "16h"
+              }
+            ],
+            "tempoMs": 555,
+            "pontuacao": {
+              "corretos": 3,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 1,
+              "semApoio": 2,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "frente e verso"
+                },
+                {
+                  "item": 1,
+                  "campo": "artwork",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Preparar"
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "incorretos",
+                  "esperado": "pra hoje às 16h",
+                  "obtido": "16h"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "dois produtos com prazo comum e arte de um só",
+          "regras": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": "1.000",
+                "size": "A5",
+                "printing": "",
+                "artwork": "Pronta",
+                "deadline": "pra sexta"
+              },
+              {
+                "product": "Cartões de visita",
+                "quantity": "200",
+                "size": "",
+                "printing": "",
+                "artwork": "",
+                "deadline": "pra sexta"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 8,
+              "vaziosCorretos": 4,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Panfletos A5",
+                "quantity": "Donos",
+                "size": "A5",
+                "printing": "Só na frente",
+                "artwork": "A preparar",
+                "deadline": " Sexta-feira"
+              }
+            ],
+            "tempoMs": 565,
+            "pontuacao": {
+              "corretos": 2,
+              "vaziosCorretos": 0,
+              "omitidos": 3,
+              "incorretos": 3,
+              "semApoio": 1,
+              "itensFaltantes": 1,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Panfletos",
+                  "obtido": "Panfletos A5"
+                },
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "1.000",
+                  "obtido": "Donos"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Só na frente"
+                },
+                {
+                  "item": 1,
+                  "campo": "artwork",
+                  "tipo": "incorretos",
+                  "esperado": "Pronta",
+                  "obtido": "A preparar"
+                },
+                {
+                  "item": 2,
+                  "campo": "product",
+                  "tipo": "omitidos",
+                  "esperado": "Cartões de visita",
+                  "obtido": ""
+                },
+                {
+                  "item": 2,
+                  "campo": "quantity",
+                  "tipo": "omitidos",
+                  "esperado": "200",
+                  "obtido": ""
+                },
+                {
+                  "item": 2,
+                  "campo": "deadline",
+                  "tipo": "omitidos",
+                  "esperado": "pra sexta",
+                  "obtido": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "prazo específico por produto",
+          "regras": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": "500",
+                "size": "A5",
+                "printing": "",
+                "artwork": "",
+                "deadline": "para quinta"
+              },
+              {
+                "product": "Banner",
+                "quantity": "1",
+                "size": "80 x 120 cm",
+                "printing": "",
+                "artwork": "",
+                "deadline": "para sexta às 14:30"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 8,
+              "vaziosCorretos": 4,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Panfletos A5",
+                "quantity": "500",
+                "size": "A5",
+                "printing": "frente e verso",
+                "artwork": "não disponível",
+                "deadline": "14:30"
+              },
+              {
+                "product": "Banner 80x120cm",
+                "quantity": "1",
+                "size": "80x120cm",
+                "printing": "frente e verso",
+                "artwork": "não disponível",
+                "deadline": "14:30"
+              }
+            ],
+            "tempoMs": 890,
+            "pontuacao": {
+              "corretos": 4,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 4,
+              "semApoio": 4,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Panfletos",
+                  "obtido": "Panfletos A5"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "frente e verso"
+                },
+                {
+                  "item": 1,
+                  "campo": "artwork",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "não disponível"
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "incorretos",
+                  "esperado": "para quinta",
+                  "obtido": "14:30"
+                },
+                {
+                  "item": 2,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Banner",
+                  "obtido": "Banner 80x120cm"
+                },
+                {
+                  "item": 2,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "frente e verso"
+                },
+                {
+                  "item": 2,
+                  "campo": "artwork",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "não disponível"
+                },
+                {
+                  "item": 2,
+                  "campo": "deadline",
+                  "tipo": "incorretos",
+                  "esperado": "para sexta às 14:30",
+                  "obtido": "14:30"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "correção de quantidade sem repetir o produto",
+          "regras": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": "1.000",
+                "size": "A5",
+                "printing": "Só na frente",
+                "artwork": "Pronta",
+                "deadline": ""
+              }
+            ],
+            "pontuacao": {
+              "corretos": 5,
+              "vaziosCorretos": 1,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Panfletos A5",
+                "quantity": ":500",
+                "size": "A5",
+                "printing": "fronte",
+                "artwork": "pronta",
+                "deadline": "2023-03-15T00:00:00.000Z"
+              }
+            ],
+            "tempoMs": 591,
+            "pontuacao": {
+              "corretos": 2,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 3,
+              "semApoio": 1,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Panfletos",
+                  "obtido": "Panfletos A5"
+                },
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "1.000",
+                  "obtido": ":500"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "incorretos",
+                  "esperado": "Só na frente",
+                  "obtido": "fronte"
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "2023-03-15T00:00:00.000Z"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "correção de quantidade com produto repetido",
+          "regras": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": "1.000",
+                "size": "A5",
+                "printing": "",
+                "artwork": "",
+                "deadline": ""
+              }
+            ],
+            "pontuacao": {
+              "corretos": 3,
+              "vaziosCorretos": 3,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Panfletos A5",
+                "quantity": ":500",
+                "size": "A5",
+                "printing": "frente e verso",
+                "artwork": "",
+                "deadline": "2023-03-15T00:00:00.000Z"
+              }
+            ],
+            "tempoMs": 712,
+            "pontuacao": {
+              "corretos": 1,
+              "vaziosCorretos": 1,
+              "omitidos": 0,
+              "incorretos": 2,
+              "semApoio": 2,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Panfletos",
+                  "obtido": "Panfletos A5"
+                },
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "1.000",
+                  "obtido": ":500"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "frente e verso"
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "2023-03-15T00:00:00.000Z"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "quantidade em aberto entre duas opções",
+          "regras": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": "1",
+                "size": "",
+                "printing": "",
+                "artwork": "",
+                "deadline": "para sexta às 14h"
+              },
+              {
+                "product": "Panfletos",
+                "quantity": "",
+                "size": "",
+                "printing": "",
+                "artwork": "",
+                "deadline": "para sexta às 14h"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 5,
+              "vaziosCorretos": 7,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": "1",
+                "size": "A3",
+                "printing": "Só na frente",
+                "artwork": "Não disponível",
+                "deadline": "2023-06-30T14:00:00"
+              }
+            ],
+            "tempoMs": 598,
+            "pontuacao": {
+              "corretos": 2,
+              "vaziosCorretos": 0,
+              "omitidos": 2,
+              "incorretos": 1,
+              "semApoio": 3,
+              "itensFaltantes": 1,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "size",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "A3"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Só na frente"
+                },
+                {
+                  "item": 1,
+                  "campo": "artwork",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Não disponível"
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "incorretos",
+                  "esperado": "para sexta às 14h",
+                  "obtido": "2023-06-30T14:00:00"
+                },
+                {
+                  "item": 2,
+                  "campo": "product",
+                  "tipo": "omitidos",
+                  "esperado": "Panfletos",
+                  "obtido": ""
+                },
+                {
+                  "item": 2,
+                  "campo": "deadline",
+                  "tipo": "omitidos",
+                  "esperado": "para sexta às 14h",
+                  "obtido": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "quantidade depois do produto e medidas decimais",
+          "regras": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": "2",
+                "size": "0,8 m x 1,2 m",
+                "printing": "",
+                "artwork": "",
+                "deadline": "Para amanhã às 14:30"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 4,
+              "vaziosCorretos": 2,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": ":[{",
+                "size": "0.8m x 1.2m",
+                "printing": "só na frente",
+                "artwork": "pronta",
+                "deadline": "amanhã às 14:30"
+              }
+            ],
+            "tempoMs": 785,
+            "pontuacao": {
+              "corretos": 3,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 1,
+              "semApoio": 2,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "2",
+                  "obtido": ":[{"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "só na frente"
+                },
+                {
+                  "item": 1,
+                  "campo": "artwork",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "pronta"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "dimensões compactas sem confundir com impressão",
+          "regras": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": "1",
+                "size": "1x4 m",
+                "printing": "",
+                "artwork": "",
+                "deadline": ""
+              }
+            ],
+            "pontuacao": {
+              "corretos": 3,
+              "vaziosCorretos": 3,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": ",",
+                "size": "1x4",
+                "printing": "só na frente",
+                "artwork": "",
+                "deadline": ""
+              }
+            ],
+            "tempoMs": 452,
+            "pontuacao": {
+              "corretos": 1,
+              "vaziosCorretos": 2,
+              "omitidos": 0,
+              "incorretos": 2,
+              "semApoio": 1,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "1",
+                  "obtido": ","
+                },
+                {
+                  "item": 1,
+                  "campo": "size",
+                  "tipo": "incorretos",
+                  "esperado": "1x4 m",
+                  "obtido": "1x4"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "só na frente"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "nomes alternativos e números por extenso",
+          "regras": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": "dois",
+                "size": "",
+                "printing": "",
+                "artwork": "",
+                "deadline": ""
+              },
+              {
+                "product": "Banner",
+                "quantity": "um",
+                "size": "",
+                "printing": "",
+                "artwork": "",
+                "deadline": "para amanhã"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 5,
+              "vaziosCorretos": 7,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Flyer 1",
+                "quantity": "One",
+                "size": "A4",
+                "printing": "Front only",
+                "artwork": "Preparar",
+                "deadline": "Amanhã"
+              },
+              {
+                "product": "Flyer 2",
+                "quantity": "One",
+                "size": "A4",
+                "printing": "Front only",
+                "artwork": "Preparar",
+                "deadline": "Amanhã"
+              },
+              {
+                "product": "Banner",
+                "quantity": "One",
+                "size": "Landscape",
+                "printing": "Front only",
+                "artwork": "Preparar",
+                "deadline": "Amanhã"
+              }
+            ],
+            "tempoMs": 1164,
+            "pontuacao": {
+              "corretos": 1,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 4,
+              "semApoio": 13,
+              "itensFaltantes": 0,
+              "itensExtras": 1,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Panfletos",
+                  "obtido": "Flyer 1"
+                },
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "dois",
+                  "obtido": "One"
+                },
+                {
+                  "item": 1,
+                  "campo": "size",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "A4"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Front only"
+                },
+                {
+                  "item": 1,
+                  "campo": "artwork",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Preparar"
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Amanhã"
+                },
+                {
+                  "item": 2,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Banner",
+                  "obtido": "Flyer 2"
+                },
+                {
+                  "item": 2,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "um",
+                  "obtido": "One"
+                },
+                {
+                  "item": 2,
+                  "campo": "size",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "A4"
+                },
+                {
+                  "item": 2,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Front only"
+                },
+                {
+                  "item": 2,
+                  "campo": "artwork",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Preparar"
+                },
+                {
+                  "item": 3,
+                  "campo": "product",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Banner"
+                },
+                {
+                  "item": 3,
+                  "campo": "quantity",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "One"
+                },
+                {
+                  "item": 3,
+                  "campo": "size",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Landscape"
+                },
+                {
+                  "item": 3,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Front only"
+                },
+                {
+                  "item": 3,
+                  "campo": "artwork",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Preparar"
+                },
+                {
+                  "item": 3,
+                  "campo": "deadline",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Amanhã"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "pedido sem produto identificado",
+          "regras": {
+            "itens": [
+              {
+                "product": "",
+                "quantity": "",
+                "size": "",
+                "printing": "",
+                "artwork": "",
+                "deadline": ""
+              }
+            ],
+            "pontuacao": {
+              "corretos": 0,
+              "vaziosCorretos": 6,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Cartões de visita",
+                "quantity": ",",
+                "size": "A4",
+                "printing": "frente e verso",
+                "artwork": "",
+                "deadline": ""
+              }
+            ],
+            "tempoMs": 502,
+            "pontuacao": {
+              "corretos": 0,
+              "vaziosCorretos": 2,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 4,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Cartões de visita"
+                },
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": ","
+                },
+                {
+                  "item": 1,
+                  "campo": "size",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "A4"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "frente e verso"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "arte ainda por fazer",
+          "regras": {
+            "itens": [
+              {
+                "product": "Cartões de visita",
+                "quantity": "250",
+                "size": "9 x 5 cm",
+                "printing": "4x4",
+                "artwork": "A preparar",
+                "deadline": ""
+              }
+            ],
+            "pontuacao": {
+              "corretos": 5,
+              "vaziosCorretos": 1,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Cartões de visita 4x4 9x5cm",
+                "quantity": "]",
+                "size": "9x5cm",
+                "printing": "só na frente",
+                "artwork": "A preparar",
+                "deadline": "2023-03-15T00:00:00.000000Z"
+              }
+            ],
+            "tempoMs": 819,
+            "pontuacao": {
+              "corretos": 2,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 3,
+              "semApoio": 1,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Cartões de visita",
+                  "obtido": "Cartões de visita 4x4 9x5cm"
+                },
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "250",
+                  "obtido": "]"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "incorretos",
+                  "esperado": "4x4",
+                  "obtido": "só na frente"
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "2023-03-15T00:00:00.000000Z"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "pedido com abreviação e data completa",
+          "regras": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": "2 mil",
+                "size": "A6",
+                "printing": "apenas na frente",
+                "artwork": "",
+                "deadline": "até 07/12/2026 às 9h30"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 5,
+              "vaziosCorretos": 1,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Cartões de visita",
+                "quantity": "2.000",
+                "size": "A6",
+                "printing": "frente",
+                "artwork": "",
+                "deadline": "07/12/2026 às 09h30"
+              }
+            ],
+            "tempoMs": 510,
+            "pontuacao": {
+              "corretos": 4,
+              "vaziosCorretos": 1,
+              "omitidos": 0,
+              "incorretos": 1,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Panfletos",
+                  "obtido": "Cartões de visita"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "dimensão corrigida não vira quantidade",
+          "regras": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": "2",
+                "size": "80 x 120 cm",
+                "printing": "",
+                "artwork": "Pronta",
+                "deadline": ""
+              }
+            ],
+            "pontuacao": {
+              "corretos": 4,
+              "vaziosCorretos": 2,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": "80",
+                "size": "80x120cm",
+                "printing": "Só na frente",
+                "artwork": "Pronta",
+                "deadline": "2023-02-20T00:00:00.000Z"
+              }
+            ],
+            "tempoMs": 636,
+            "pontuacao": {
+              "corretos": 3,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 1,
+              "semApoio": 2,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "2",
+                  "obtido": "80"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Só na frente"
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "2023-02-20T00:00:00.000Z"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "casosNovos": {
+      "regras": {
+        "fichas": 8,
+        "fichasExatas": 2,
+        "corretos": 35,
+        "vaziosCorretos": 12,
+        "omitidos": 5,
+        "incorretos": 1,
+        "semApoio": 1,
+        "itensFaltantes": 0,
+        "itensExtras": 0,
+        "respostasInvalidas": 0
+      },
+      "ia": {
+        "fichas": 8,
+        "fichasExatas": 0,
+        "corretos": 22,
+        "vaziosCorretos": 5,
+        "omitidos": 4,
+        "incorretos": 15,
+        "semApoio": 8,
+        "itensFaltantes": 0,
+        "itensExtras": 0,
+        "respostasInvalidas": 0
+      },
+      "casos": [
+        {
+          "nome": "produto digitado sem acento",
+          "regras": {
+            "itens": [
+              {
+                "product": "",
+                "quantity": "",
+                "size": "9x5 cm",
+                "printing": "só na frente",
+                "artwork": "",
+                "deadline": "para terça"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 3,
+              "vaziosCorretos": 1,
+              "omitidos": 2,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "omitidos",
+                  "esperado": "Cartões de visita",
+                  "obtido": ""
+                },
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "omitidos",
+                  "esperado": "100",
+                  "obtido": ""
+                }
+              ]
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Cartões de visita",
+                "quantity": "100",
+                "size": "9x5 cm",
+                "printing": "só na frente",
+                "artwork": "",
+                "deadline": "2023-03-15"
+              }
+            ],
+            "tempoMs": 554,
+            "pontuacao": {
+              "corretos": 4,
+              "vaziosCorretos": 1,
+              "omitidos": 0,
+              "incorretos": 1,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "incorretos",
+                  "esperado": "para terça",
+                  "obtido": "2023-03-15"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "quantidade informada depois do produto",
+          "regras": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": "",
+                "size": "A4",
+                "printing": "frente e verso",
+                "artwork": "",
+                "deadline": "para quinta"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 4,
+              "vaziosCorretos": 1,
+              "omitidos": 1,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "omitidos",
+                  "esperado": "350",
+                  "obtido": ""
+                }
+              ]
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": ",",
+                "size": "A4",
+                "printing": "frente e verso",
+                "artwork": "",
+                "deadline": ""
+              }
+            ],
+            "tempoMs": 420,
+            "pontuacao": {
+              "corretos": 3,
+              "vaziosCorretos": 1,
+              "omitidos": 1,
+              "incorretos": 1,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "350",
+                  "obtido": ","
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "omitidos",
+                  "esperado": "para quinta",
+                  "obtido": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "cliente muda o prazo",
+          "regras": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": "2",
+                "size": "80 x 120 cm",
+                "printing": "",
+                "artwork": "",
+                "deadline": "para sexta"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 3,
+              "vaziosCorretos": 2,
+              "omitidos": 0,
+              "incorretos": 1,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "incorretos",
+                  "esperado": "pra segunda às 10h",
+                  "obtido": "para sexta"
+                }
+              ]
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Banner 80x120cm",
+                "quantity": ",",
+                "size": "80x120",
+                "printing": "frente e verso",
+                "artwork": "Preparar",
+                "deadline": "2023-06-08T10:00:00"
+              }
+            ],
+            "tempoMs": 670,
+            "pontuacao": {
+              "corretos": 0,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 4,
+              "semApoio": 2,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Banner",
+                  "obtido": "Banner 80x120cm"
+                },
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "2",
+                  "obtido": ","
+                },
+                {
+                  "item": 1,
+                  "campo": "size",
+                  "tipo": "incorretos",
+                  "esperado": "80 x 120 cm",
+                  "obtido": "80x120"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "frente e verso"
+                },
+                {
+                  "item": 1,
+                  "campo": "artwork",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "Preparar"
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "incorretos",
+                  "esperado": "pra segunda às 10h",
+                  "obtido": "2023-06-08T10:00:00"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "prazo compartilhado informado antes dos produtos",
+          "regras": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": "500",
+                "size": "A5",
+                "printing": "",
+                "artwork": "",
+                "deadline": "Para sexta às 18h"
+              },
+              {
+                "product": "Banner",
+                "quantity": "2",
+                "size": "90 x 120 cm",
+                "printing": "",
+                "artwork": "",
+                "deadline": ""
+              }
+            ],
+            "pontuacao": {
+              "corretos": 7,
+              "vaziosCorretos": 4,
+              "omitidos": 1,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 2,
+                  "campo": "deadline",
+                  "tipo": "omitidos",
+                  "esperado": "para sexta às 18h",
+                  "obtido": ""
+                }
+              ]
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Panfletos A5",
+                "quantity": ",",
+                "size": "A5",
+                "printing": "frente e verso",
+                "artwork": "",
+                "deadline": "sexta às 18h"
+              },
+              {
+                "product": "Banners 90x120cm",
+                "quantity": "",
+                "size": "90x120cm",
+                "printing": "frente e verso",
+                "artwork": "",
+                "deadline": "sexta às 18h"
+              }
+            ],
+            "tempoMs": 887,
+            "pontuacao": {
+              "corretos": 4,
+              "vaziosCorretos": 2,
+              "omitidos": 1,
+              "incorretos": 3,
+              "semApoio": 2,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Panfletos",
+                  "obtido": "Panfletos A5"
+                },
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "500",
+                  "obtido": ","
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "frente e verso"
+                },
+                {
+                  "item": 2,
+                  "campo": "product",
+                  "tipo": "incorretos",
+                  "esperado": "Banner",
+                  "obtido": "Banners 90x120cm"
+                },
+                {
+                  "item": 2,
+                  "campo": "quantity",
+                  "tipo": "omitidos",
+                  "esperado": "2",
+                  "obtido": ""
+                },
+                {
+                  "item": 2,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "frente e verso"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "arquivo final aprovado para impressão",
+          "regras": {
+            "itens": [
+              {
+                "product": "Cartões de visita",
+                "quantity": "100",
+                "size": "",
+                "printing": "frente e verso",
+                "artwork": "",
+                "deadline": "Para amanhã às 12h"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 4,
+              "vaziosCorretos": 1,
+              "omitidos": 1,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "artwork",
+                  "tipo": "omitidos",
+                  "esperado": "Pronta",
+                  "obtido": ""
+                }
+              ]
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Cartões de visita",
+                "quantity": ",",
+                "size": "",
+                "printing": "",
+                "artwork": "",
+                "deadline": "2023-03-01T12:00:00"
+              }
+            ],
+            "tempoMs": 579,
+            "pontuacao": {
+              "corretos": 1,
+              "vaziosCorretos": 1,
+              "omitidos": 2,
+              "incorretos": 2,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "100",
+                  "obtido": ","
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "omitidos",
+                  "esperado": "frente e verso",
+                  "obtido": ""
+                },
+                {
+                  "item": 1,
+                  "campo": "artwork",
+                  "tipo": "omitidos",
+                  "esperado": "Pronta",
+                  "obtido": ""
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "incorretos",
+                  "esperado": "Para amanhã às 12h",
+                  "obtido": "2023-03-01T12:00:00"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "formato ainda indeciso",
+          "regras": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": "300",
+                "size": "A5",
+                "printing": "",
+                "artwork": "",
+                "deadline": "para sexta"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 3,
+              "vaziosCorretos": 2,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 1,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "size",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "A5"
+                }
+              ]
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Panfletos",
+                "quantity": "]",
+                "size": "A5",
+                "printing": "frente e verso",
+                "artwork": "A preparar",
+                "deadline": "6/6"
+              }
+            ],
+            "tempoMs": 622,
+            "pontuacao": {
+              "corretos": 1,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 2,
+              "semApoio": 3,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "300",
+                  "obtido": "]"
+                },
+                {
+                  "item": 1,
+                  "campo": "size",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "A5"
+                },
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "frente e verso"
+                },
+                {
+                  "item": 1,
+                  "campo": "artwork",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "A preparar"
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "incorretos",
+                  "esperado": "para sexta",
+                  "obtido": "6/6"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "produto mencionado na frase sobre a arte",
+          "regras": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": "1",
+                "size": "1 x 2 m",
+                "printing": "",
+                "artwork": "Pronta",
+                "deadline": "para amanhã"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 5,
+              "vaziosCorretos": 1,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Banner",
+                "quantity": "1",
+                "size": "1x2m",
+                "printing": "frente e verso",
+                "artwork": "pronta",
+                "deadline": "amanhã"
+              }
+            ],
+            "tempoMs": 463,
+            "pontuacao": {
+              "corretos": 5,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 1,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "printing",
+                  "tipo": "semApoio",
+                  "esperado": "",
+                  "obtido": "frente e verso"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "nome": "pedido completo de cartões",
+          "regras": {
+            "itens": [
+              {
+                "product": "Cartões de visita",
+                "quantity": "100",
+                "size": "9 x 5 cm",
+                "printing": "frente e verso",
+                "artwork": "Pronta",
+                "deadline": "até quinta às 15h"
+              }
+            ],
+            "pontuacao": {
+              "corretos": 6,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 0,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": true,
+              "diferencas": []
+            }
+          },
+          "ia": {
+            "itens": [
+              {
+                "product": "Cartões de visita",
+                "quantity": ",",
+                "size": "9x5cm",
+                "printing": "frente e verso",
+                "artwork": "Pronta",
+                "deadline": "15h"
+              }
+            ],
+            "tempoMs": 469,
+            "pontuacao": {
+              "corretos": 4,
+              "vaziosCorretos": 0,
+              "omitidos": 0,
+              "incorretos": 2,
+              "semApoio": 0,
+              "itensFaltantes": 0,
+              "itensExtras": 0,
+              "fichaExata": false,
+              "diferencas": [
+                {
+                  "item": 1,
+                  "campo": "quantity",
+                  "tipo": "incorretos",
+                  "esperado": "100",
+                  "obtido": ","
+                },
+                {
+                  "item": 1,
+                  "campo": "deadline",
+                  "tipo": "incorretos",
+                  "esperado": "até quinta às 15h",
+                  "obtido": "15h"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

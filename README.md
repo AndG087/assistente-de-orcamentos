@@ -41,6 +41,6 @@ Ao publicar mudanças nos scripts ou estilos, atualize a versão `?v=` dos arqui
 
 ## Avaliação e piloto
 
-Os [15 pedidos fictícios de referência](tests/casos-de-pedido.json) incluem vários produtos, abreviações, correções e campos ambíguos. Cada pedido tem uma ficha esperada. Campos omitidos no arquivo representam informações a confirmar. Para comparar com um modelo de IA, use os mesmos pedidos e conte acertos, omissões e informações sem suporte na mensagem. Registre o modelo e a data do teste junto aos resultados.
+Comparei as regras do navegador com o Llama 3.2 de 1B em 15 casos de regressão e 8 pedidos fictícios novos. Nos pedidos novos, as regras acertaram 2 fichas completas e o modelo acertou 0. O [relatório de avaliação](avaliacao/resultado.md) mostra os erros por campo, os casos e como repetir o teste.
 
 Em um piloto com uma gráfica, meça quanto tempo leva para preparar a resposta manualmente e quanto tempo leva para revisar a ficha e o rascunho. Registre os campos e as perguntas que precisaram de correção.

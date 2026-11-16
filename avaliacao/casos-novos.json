@@ -1,0 +1,45 @@
+[
+  {
+    "nome": "produto digitado sem acento",
+    "mensagem": "100 cartoes de visita, 9x5 cm, só na frente, para terça.",
+    "itens": [{"product":"Cartões de visita","quantity":"100","size":"9x5 cm","printing":"só na frente","deadline":"para terça"}]
+  },
+  {
+    "nome": "quantidade informada depois do produto",
+    "mensagem": "Panfletos: 350, A4, frente e verso, para quinta.",
+    "itens": [{"product":"Panfletos","quantity":"350","size":"A4","printing":"frente e verso","deadline":"para quinta"}]
+  },
+  {
+    "nome": "cliente muda o prazo",
+    "mensagem": "Quero 2 banners de 80 x 120 cm para sexta. Na verdade, pra segunda às 10h.",
+    "itens": [{"product":"Banner","quantity":"2","size":"80 x 120 cm","deadline":"pra segunda às 10h"}]
+  },
+  {
+    "nome": "prazo compartilhado informado antes dos produtos",
+    "mensagem": "Para sexta às 18h, preciso de 500 panfletos A5 e 2 banners de 90 x 120 cm. O prazo vale para os dois.",
+    "itens": [
+      {"product":"Panfletos","quantity":"500","size":"A5","deadline":"para sexta às 18h"},
+      {"product":"Banner","quantity":"2","size":"90 x 120 cm","deadline":"para sexta às 18h"}
+    ]
+  },
+  {
+    "nome": "arquivo final aprovado para impressão",
+    "mensagem": "Para amanhã às 12h: quero 100 cartões de visita, frente e verso. O arquivo final já está aprovado para impressão.",
+    "itens": [{"product":"Cartões de visita","quantity":"100","printing":"frente e verso","artwork":"Pronta","deadline":"Para amanhã às 12h"}]
+  },
+  {
+    "nome": "formato ainda indeciso",
+    "mensagem": "Quero 300 panfletos para sexta. Tô entre A5 e A6.",
+    "itens": [{"product":"Panfletos","quantity":"300","deadline":"para sexta"}]
+  },
+  {
+    "nome": "produto mencionado na frase sobre a arte",
+    "mensagem": "Tenho a arte do banner pronta. Quero 1 banner de 1 x 2 m para amanhã.",
+    "itens": [{"product":"Banner","quantity":"1","size":"1 x 2 m","artwork":"Pronta","deadline":"para amanhã"}]
+  },
+  {
+    "nome": "pedido completo de cartões",
+    "mensagem": "Preciso de 100 cartões de visita de 9 x 5 cm, frente e verso, até quinta às 15h. A arte está pronta.",
+    "itens": [{"product":"Cartões de visita","quantity":"100","size":"9 x 5 cm","printing":"frente e verso","artwork":"Pronta","deadline":"até quinta às 15h"}]
+  }
+]
